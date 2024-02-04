@@ -42,6 +42,7 @@ class MainScreenModel(BaseScreenModel):
         self._grapher.add_line(fx_x_values, fx_y_values)
         regr_x_values, regr_y_values = self._regr.get_regression_data(self._fxapi.fxdata, self._basecurrency)
         self._grapher.add_line(regr_x_values, regr_y_values)
+        self._grapher.set_title(f'{self._exchcurrency[CurrencyNameKey]} to {self._basecurrency[CurrencyNameKey]}')
         self._current_graph = self._grapher.graph
         self.notify_observers("main screen")
 

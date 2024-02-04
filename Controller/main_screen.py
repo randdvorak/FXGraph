@@ -27,8 +27,6 @@ class MainScreenController:
 
     def set_status(self) -> None:
         status = self.model._exchcurrency == None or self.model._basecurrency == None or self.model._resolution == None
-        print(f'{self.model._exchcurrency} {self.model._basecurrency} {self.model._resolution}')
-        print(f'setting {status} {type(status)}')   
         self.view.button_disabled  = status
 
     def get_resolutions(self) -> list[Any]:

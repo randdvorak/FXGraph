@@ -35,9 +35,10 @@ class Grapher:
     def clear_graph(self) -> None:
         plt.cla()
 
-    def set_title(title: str) -> None:
+    def set_title(self, title: str) -> None:
         plt.title(title)
-        
+        self._canvas.draw()
+
     def add_line(self, x_values: list[datetime], y_values: list[float]):
         self._ax.xaxis_date()
         plt.plot(x_values, y_values)
