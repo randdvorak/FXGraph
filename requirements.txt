@@ -1,0 +1,8 @@
+httpx==0.26.0
+Kivy==2.3.0
+kivymd==1.2.0
+matplotlib==3.8.2
+numpy==1.26.3
+python-dotenv==1.0.1
+scikit_learn==1.4.0
+six==1.16.0

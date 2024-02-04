@@ -1,0 +1,49 @@
+<MainScreenView>
+    MDBoxLayout:
+        orientation: 'vertical'
+        MDBoxLayout:
+            orientation: 'horizontal'
+            spacing: dp(10)
+            padding: dp(10)
+            size_hint_y: .1
+            pos_hint: {'top': 1}
+            CurrencyTextField:
+                id: exchcurrency
+                controller: root.controller
+                mode: 'rectangle'
+                label: 'exchcurrency'
+                size_hint_x: .3
+                hint_text: 'Exchange Currency'
+                pos_hint: {'center_y': .5}
+            MDLabel:
+                text: ' TO '
+                halign: 'center'
+                size_hint_x: .05
+                pos_hint: {'center_y': .5}
+            CurrencyTextField:
+                id: basecurrency
+                controller: root.controller
+                mode: 'rectangle'
+                label: 'basecurrency'
+                size_hint_x: .3
+                hint_text: 'Base Currency'
+                pos_hint: {'center_y': .5}
+            MDDropDownItem:
+                controller: root.controller
+                id: droptext
+                text: 'Resolution'
+                size_hint_x: .1
+                pos_hint: {'center_y': .5}
+                on_release: root.open_menu(self)
+            MDFillRoundFlatButton:
+                text: "Graph"
+                pos_hint: {'center_y': .5}
+                size_hint_x: .25
+                disabled: root.button_disabled
+                on_release: root.model.generate_graph()
+        BoxLayout:
+            id: graph
+            size_hint_y: .85
+            pos_hint: {'bottom': 1}
+
+
